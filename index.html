@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Aldo Antonio Altamira Nava</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+      crossorigin="anonymous"
+    >
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Gruppo&family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./main.css">
+    <script>
+      console.log('Hola Gente esto es un log c:');
+      let contador = 1;
+      let d = new Date();
+      function randomColor(){
+        let random = getColor();
+        document.getElementById("body").style["background-color"] = random;
+      }
+
+      function getColor(){
+        var r = Math. floor(Math. random() * 256);
+        var g = Math. floor(Math. random() * 256);
+        var b = Math. floor(Math. random() * 256);
+        return `rgb(${r},${g},${b})`;
+      }
+
+      function tiempo(edad) {
+        let ret = d.getFullYear() - (edad ? 1993 : 2017);
+        if (d.getMonth() < 0 && d.getDate() < 4 && edad) {
+          ret = ret - 1;
+        }
+        return ret;
+      }
+
+      function getPhoto() {
+        contador = contador + 1;
+        if (contador === 6) {
+          contador = 1;
+        }
+        document.getElementById("foto").src = `./assets/aldo${contador}.jpg`;
+      }
+
+      setTimeout(() => {
+        document.getElementById("resumen1").innerHTML = `Hola, me llamo Aldo y tengo ${tiempo(true)} años, me gradue como ingeniero en Sistemas Computacionales en el Instituto Tecnologico de Pachuca.`;
+        document.getElementById("resumen2").innerHTML = `Soy Desarrollador FullStack en javascript con mas de ${tiempo()} años de experiencia.`;
+      }, 100)
+
+      setInterval(() => {
+        randomColor();
+        getPhoto();
+      }, 5000);
+    </script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+      crossorigin="anonymous">
+    </script>
+  </head>
+  <body id="body">
+    <div class="container principal">
+      <h1 class="nombre">Aldo Antonio Altamira Nava</h1>
+      <img id="foto" class="rounded img-thumbnail foto" alt="Aldo" src="./assets/aldo1.jpg" />
+      <p class="divider" />
+      <p class="resumenTxt" id="resumen1" />
+      <p class="resumenTxt" id="resumen2" />
+      <p class="divider" />
+      <div class="row">
+        <div class="col">
+          <p class="resumenTxt"><strong>Ingles:</strong> Basico-Intermedio</p>
+        </div>
+        <div class="col">
+          <p class="resumenTxt"><strong>Telefono:</strong> <a href="tel:771-189-0683">771 189 06 83</a></p>
+        </div>
+        <div class="col">
+          <p class="resumenTxt"><strong>Email:</strong> <a href="mailto:aldo.altamira1@gmail.com">aldo.altamira1@gmail.com</a></p>
+        </div>
+      </div>
+      <p class="divider" />
+      <h2 class="titulo text-center">EXPERIENCIA PROFESIONAL</h2>
+      <div>
+        <h3>Vintapp</h3>
+        <h4>Julio 2017 - Agosto 2019</h4>
+        <p class="textoExp">Vintapp fue la primera empresa que me contrato, en ella aprendí casi todo lo que sé.
+          Empece como desarrollador FullStack en javascript a pesar de que no tenia mucho conocimiento del lenguaje,
+          pero con el tiempo lo fui dominando y empezaron a surgir otras necesidades en la empresa por lo cual también
+          tuve que aprender algo de swift (iOS), conforme fue pasando el tiempo empece a supervisar a los nuevos desarrolladores
+          formando así un pequeño equipo de trabajo para futuros proyectos. <br/>
+          La mayoría de proyectos se realizaban en un ambiente MEAN (Mongo, Express, AngularJs, NodeJs) los cuales me encargaba
+          de crear, administrar, actualizar y corregir.
+          Habían proyectos que destacaban como: <br/><strong>Reporteador La Ferre:</strong> consiste en un sistema completo que
+          generaba reportes con exportación a CSV y PDF, usando sql para el almacenamiento de datos.
+          <br/><strong>Maxipublica:</strong> este era solo la parte del frontEnd con un back interno el cual solo se encargaba
+          de consumir diferentes api rest del cliente, este sistema era un gestor de publicaciones en diferentes páginas entre
+          ellas MercadoLibre, seminuevos, etc. el cual se contaba con un dashboard que mostraba todo tipo de informacion sobre
+          las publicaciones, también manejaba mensajes y tenia una sección personalizable para el usuario, incluido el cambio de idiomas.
+          <br/><strong>Maxipublica editable:</strong> este era solo la parte del frontEnd con un back interno el cual solo se encargaba
+          de consumir diferentes api rest del cliente, este sistema era un complemento del sistema anterior el cual mostraba las publicaciones
+          de un cliente en específico, este sistema se ocupaba para promocionar los vehículos del cliente usando una idea similar a wordpress
+          en el cual el cliente podía escoger que mostrar y como mostrar su información, también se podía personalizar.
+          <br/><strong>Loialt:</strong> sistema realizado en MEAN y swift de venta de servicios, el cual cuenta con pagos electrónicos
+          usando Conekta y envió de correos electrónicos.
+          <br/><strong>Uiza:</strong> consiste en un sistema de venta de servicios de transporte, el cual cuenta con pagos electrónicos
+          usando OpenPay, Facturación usando Factura, Sockets, Push Notifications y envió de correos electrónicos.
+        </p>
+        <h4>Conocimientos</h4>
+        <div class="rowFlex">
+          <span class="badge rounded-pill bg-html">HTML</span>
+          <span class="badge rounded-pill bg-css">CSS</span>
+          <span class="badge rounded-pill bg-javascript">Javascript</span>
+          <span class="badge rounded-pill bg-mongo">MongoDB</span>
+          <span class="badge rounded-pill bg-express">Express</span>
+          <span class="badge rounded-pill bg-angular">Angular Js</span>
+          <span class="badge rounded-pill bg-node">Node Js</span>
+          <span class="badge rounded-pill bg-swift">Swift</span>
+          <span class="badge rounded-pill bg-mysql">Mysql</span>
+          <span class="badge rounded-pill bg-git">Git</span>
+          <span class="badge rounded-pill bg-socket">Sockets</span>
+          <span class="badge rounded-pill bg-sql">SQL Server</span>
+          <span class="badge rounded-pill bg-linux">Linux</span>
+        </div>
+      </div>
+      <p class="divider" />
+      <div>
+        <h3>Magic Log</h3>
+        <h4>Agosto 2019 - Junio 2020</h4>
+        <p class="textoExp">Al salir de Vintapp comencé a trabajar en Magic Log como desarrollador
+          Fullstack en javascript y también como desarrollador movil en react native, esto presento
+          un reto para mí ya que en esta empresa se usaba react como framework de front end,
+          por suerte fue sencillo entenderle al framework teniendo en cuenta que yo venia de angular js
+          con un modelo vista controlador, aprender react fue sencillo por lo cual react native también lo fue.
+          Dentro de la empresa era el único desarrollador movil, por lo cual se me dejo la creación de las aplicaciones y capacitacion
+          de mis compañeros de trabajo en este ámbito, también se me encargaban modificaciones y creaciones de módulos en sistemas que ya se tenían.
+          incluso me toco realizar un sistema nuevo junto con mis compañeros realizado en React, NodeJs, Express, Postgress.
+          Habían proyectos que destacaban como: <br/><strong>Sales Intelligence:</strong> Sistema móvil realizado en React
+          Native el cual se encarga de mostrar información consultada de varias API Rest, mostrando graficas y editando datos.
+          <br/><strong>Poseidon:</strong> Sistema realizado en React, React Native y NodeJs que consiste en un sistema de
+          gestión de embarques, el cual genera reportes PDF y Excel, contaba con un dashboard el cual mostraba información clave para el cliente.
+          <br/><strong>Roldan:</strong> Sistema realizado en React, React Native y NodeJs que consiste en un sistema de
+          gestión de embarques, el cual genera reportes PDF y Excel, contaba con un dashboard el cual mostraba información clave para el cliente,
+          este sistema era similar a Poseidon por lo cual se realizó de una forma más optima y con componentes reutilizables para futuros proyectos.
+        </p>
+        <h4>Conocimientos</h4>
+        <div class="rowFlex">
+          <span class="badge rounded-pill bg-html">HTML</span>
+          <span class="badge rounded-pill bg-css">CSS</span>
+          <span class="badge rounded-pill bg-javascript">Javascript</span>
+          <span class="badge rounded-pill bg-express">Express</span>
+          <span class="badge rounded-pill bg-react">React</span>
+          <span class="badge rounded-pill bg-node">Node Js</span>
+          <span class="badge rounded-pill bg-react-native">React Native</span>
+          <span class="badge rounded-pill bg-postgress">Postgress</span>
+          <span class="badge rounded-pill bg-git">Git</span>
+          <span class="badge rounded-pill bg-sql">SQL Server</span>
+          <span class="badge rounded-pill bg-linux">Linux</span>
+        </div>
+      </div>
+      <p class="divider" />
+      <div>
+        <h3>VASS</h3>
+        <h4>Junio 2020</h4>
+        <p class="textoExp">Estando en Magic Log se me presento una buena oferta por parte de VASS los cuales solicitaban un
+          desarrollador móvil, por lo cual decidí aceptar este otro reto, ya que quería crecer en este ámbito.
+          Una vez dentro de VASS se me encargo la administración de una aplicación en react native, la cual consiste en un sistema
+          de renta de viviendas con una garantía establecida por el cliente, consultando servicios y dependencias de externos.
+          La administración de esta aplicación incluye el back, front y base de datos de la misma.
+        </p>
+        <h4>Conocimientos</h4>
+        <div class="rowFlex">
+          <span class="badge rounded-pill bg-html">HTML</span>
+          <span class="badge rounded-pill bg-css">CSS</span>
+          <span class="badge rounded-pill bg-javascript">Javascript</span>
+          <span class="badge rounded-pill bg-typescript">Typescript</span>
+          <span class="badge rounded-pill bg-mongo">MongoDB</span>
+          <span class="badge rounded-pill bg-express">Express</span>
+          <span class="badge rounded-pill bg-react">React</span>
+          <span class="badge rounded-pill bg-node">Node Js</span>
+          <span class="badge rounded-pill bg-react-native">React Native</span>
+          <span class="badge rounded-pill bg-docker">Docker</span>
+          <span class="badge rounded-pill bg-redis">Redis</span>
+          <span class="badge rounded-pill bg-socket">Sockets</span>
+          <span class="badge rounded-pill bg-git">Git</span>
+          <span class="badge rounded-pill bg-linux">Linux</span>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
