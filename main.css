@@ -123,3 +123,8 @@
   background-color: black !important;
   color: white !important;
 }
+
+.icono {
+  width: 32px;
+  height: 32px;
+}
